@@ -6,6 +6,7 @@ categories: 教程
 tag: linux
 ---
 
+
 ## ps  
 `ps-aux|grepchat.js`  
 用于报告当前系统的进程状态  
