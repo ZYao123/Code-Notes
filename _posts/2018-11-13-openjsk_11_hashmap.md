@@ -90,7 +90,8 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,boolean evict) {
     return null;
 }
 ```
-注							{#Note}
+
+备注							{#Note}
 ------------------------------------
 1. hashcode不相同为对象不相同的必要不充分条件，即hashcode不同，对象必不相同，反之则不然。
 如：
