@@ -55,7 +55,7 @@ tag: linux
 
 ---  
 ## netstat  
-`netstat-pan|grep5623。  
+`netstat-pan|grep5623。`  
 查看端口占用  
 >-a或--all：显示所有连线中的Socket。  
 >-A<网络类型>或--<网络类型>：列出该网络类型连线中的相关地址。  
