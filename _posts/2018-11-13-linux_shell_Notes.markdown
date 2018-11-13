@@ -1,11 +1,9 @@
-# 常见命令整理
-  
-- [ps](#ps)
-- [lsof](#lsof)
-- [netstat](#netstat)
-- [kill](#kill)
-
+---
+layout: post
+title:  "linux常见命令整理"
+date:   2018-11-13
 ---  
+
 ## ps  
 `ps -aux|grep chat.js`  
 用于报告当前系统的进程状态  
