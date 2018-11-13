@@ -33,6 +33,9 @@ put							{#put}
 ------------------------------------
 hashmap的储存原理为，先通过hashmap计算key值，将key值放在hashmap中，从而使得取值时直接计算key的hash值。
 当key的hash值相同时，则创建链表或二叉树储存，进行遍历以尽可能节约时间。
+
+代码						{#Code}
+------------------------------------
 先看一下代码：
 ```java
 public V put(K key, V value) {
@@ -90,6 +93,9 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,boolean evict) {
     return null;
 }
 ```
+
+putVal方法中
+
 
 备注							{#Note}
 ------------------------------------
