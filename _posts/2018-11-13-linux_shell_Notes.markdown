@@ -2,6 +2,8 @@
 layout: post
 title:  "linux常见命令整理"
 date:   2018-11-13
+categories: 教程
+tag: linux
 ---  
 
 ## ps  
