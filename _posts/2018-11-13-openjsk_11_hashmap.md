@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  openidk_11_hashjmap代码分析
+title:  openidk_11_hashmap代码分析
 date:   2018-11-13 14:45:00 +0800
 categories: 源代码
 tag: jdk
@@ -94,7 +94,33 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,boolean evict) {
 }
 ```
 
-putVal方法中
+hash值计算						{#hash}
+------------------------------------
+putVal方法中，第一个参数为`hash(key)`，调用方法如下：
+```java
+static final int hash(Object key) {
+    int h;
+    return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+}
+```
+这是hashmap中生成key的hash值方法。
+首先检查key是否为空，若为空则返回0。
+生成hash值的核心代码为
+```java
+(h = key.hashCode()) ^ (h >>> 16)
+```
+首先直接取key的hashcode，这是一个native方法，在此不做讨论。
+生成的hashcode为int型，共32位，将其无符号右移16位，即取hashcode的高16位。之后与hashcode进行或运算。
+现说一个公式：当i=2^n时，有X%i=X&(i-1)。其中X为hashcode，即32位int型。
+证明如下：
+X可表示为二进制数：xn-xn-1-...-x2-x1-x0。
+转为10进制表示方式：xn*2^n + x(n-1)*2^(n-1) + x(n-2)*2^(n-2) + ... x2*2^2 + x1*2^1 + x0*2^0。             (1)
+所以当i为2^k时，X/i即为：式(1)/(2^k)                                                                      (2)
+式(2)的商为：
+xn*2^(n-k) + x(n-1)*2^(n-k-1) +... xk*2^0
+余数为:x(k-1)*2^(k-1) + x(k-2)*2^(k-2) +... x1*2^1 + x0*2^0                                              (3)
+
+
 
 
 备注							{#Note}
