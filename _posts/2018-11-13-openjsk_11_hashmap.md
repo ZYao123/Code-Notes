@@ -111,7 +111,7 @@ static final int hash(Object key) {
 ```
 首先直接取key的hashcode，这是一个native方法，在此不做讨论。
 生成的hashcode为int型，共32位，将其无符号右移16位，即取hashcode的高16位。之后与hashcode进行或运算。
-现说一个公式：当i=2^n时，有X%i=X&(i-1)。其中X为hashcode，即32位int型。
+先说一个公式：当i=2^n时，有X%i=X&(i-1)。其中X为hashcode，即32位int型。
 证明如下：
 X可表示为二进制数：xn-xn-1-...-x2-x1-x0。
 转为10进制表示方式：xn*2^n + x(n-1)*2^(n-1) + x(n-2)*2^(n-2) + ... x2*2^2 + x1*2^1 + x0*2^0。             (1)
