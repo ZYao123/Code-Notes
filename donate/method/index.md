@@ -19,16 +19,6 @@ permlink: /method
 
 <br>
 <br>
-[(´･_･`)]:
-赞助方式二：`微信扫一扫`
-------------------------------
-[(´･_･`)]:
-<hr>
-您可以选择手机微信扫一扫
-[(´･_･`)]:
-![微信二维码付款给Freud]({{ '/styles/images/weixin.png' | prepend: site.baseurl }})
-[(´･_･`)]:
-<br>
-<br>
+
 
 <hr>
